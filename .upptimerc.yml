@@ -3,7 +3,7 @@ owner: it4pyme
 repo: it4pyme-status
 
 sites:
-  # --- GRUPO 1: TUS SERVICIOS CRÍTICOS (PROPIOS) ---
+  # --- GRUPO 1: SERVICIOS CRÍTICOS (PROPIOS) ---
   - name: Web IT4PYME
     url: https://it4pyme.es
     method: GET
@@ -13,7 +13,7 @@ sites:
     url: https://pdf.it4pyme.es
     method: GET
 
-  # --- GRUPO 2: TUS HERRAMIENTAS MSP (INTERNAS) ---
+  # --- GRUPO 2: HERRAMIENTAS MSP (INTERNAS) ---
   - name: NinjaOne RMM (Panel Europa)
     url: https://it4pyme.rmmservice.eu
     method: GET
@@ -22,7 +22,7 @@ sites:
     url: https://gravityzone.bitdefender.com
     method: GET
 
-  # --- GRUPO 3: SERVICIOS DE CLIENTES (ECOSISTEMA) ---
+  # --- GRUPO 3: SERVICIOS DE CLIENTES (Globales) ---
   - name: Microsoft 365 (Login)
     url: https://login.microsoftonline.com
     method: GET
@@ -56,7 +56,7 @@ status-website:
     - title: Abrir Ticket
       href: https://it4pyme.es/contacto
 
-  # CONFIGURACIÓN DE ESTÉTICA "ELEGANT SLATE"
+  # CONFIGURACIÓN DEL ESTILO
   theme: dark
   css: |
     :root {
