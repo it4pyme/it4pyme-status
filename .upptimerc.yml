@@ -28,17 +28,16 @@ sites:
     method: GET
     icon: https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg
 
-  - name: Google Workspace (Gmail)
-    url: https://mail.google.com
+  - name: Google Workspace
+    url: https://www.google.com/gmail/about/
     method: GET
-    icon: https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg
 
   # --- GRUPO 4: INFRAESTRUCTURA MUNDIAL (DNS) ---
   - name: Cloudflare DNS (1.1.1.1)
     url: 1.1.1.1
     check: "tcp-ping"
     
-  - name: Google DNS (8.8.8.8)
+  - name: Google DNS
     url: 8.8.8.8
     check: "tcp-ping"
 
