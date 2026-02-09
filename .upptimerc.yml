@@ -1,36 +1,97 @@
-# Change these first
-owner: upptime # Your GitHub organization or username, where this repository lives
-repo: upptime # The name of this repository
+# .upptimerc.yml
+owner: it4pyme
+repo: it4pyme-status
 
 sites:
-  - name: Google
-    url: https://www.google.com
-  - name: Wikipedia
-    url: https://en.wikipedia.org
-  - name: Hacker News
-    url: https://news.ycombinator.com
-  - name: Test Broken Site
-    url: https://thissitedoesnotexist.koj.co
-  - name: IPv6 test
-    url: forwardemail.net
-    port: 80
+  # --- GRUPO 1: TUS SERVICIOS CRÍTICOS (PROPIOS) ---
+  - name: Web IT4PYME
+    url: https://it4pyme.es
+    method: GET
+    icon: https://it4pyme.es/favicon.png
+    
+  - name: Herramientas PDF
+    url: https://pdf.it4pyme.es
+    method: GET
+
+  # --- GRUPO 2: TUS HERRAMIENTAS MSP (INTERNAS) ---
+  - name: NinjaOne RMM (Panel Europa)
+    url: https://it4pyme.rmmservice.eu
+    method: GET
+
+  - name: Bitdefender GravityZone
+    url: https://gravityzone.bitdefender.com
+    method: GET
+
+  # --- GRUPO 3: SERVICIOS DE CLIENTES (ECOSISTEMA) ---
+  - name: Microsoft 365 (Login)
+    url: https://login.microsoftonline.com
+    method: GET
+    icon: https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg
+
+  - name: Google Workspace (Gmail)
+    url: https://mail.google.com
+    method: GET
+    icon: https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg
+
+  # --- GRUPO 4: INFRAESTRUCTURA MUNDIAL (DNS) ---
+  - name: Cloudflare DNS (1.1.1.1)
+    url: 1.1.1.1
     check: "tcp-ping"
-    ipv6: true
+    
+  - name: Google DNS (8.8.8.8)
+    url: 8.8.8.8
+    check: "tcp-ping"
 
 status-website:
-  # Add your custom domain name, or remove the `cname` line if you don't have a domain
-  # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
-  cname: demo.upptime.js.org
-  # baseUrl: /your-repo-name
-  logoUrl: https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg
-  name: Upptime
-  introTitle: "**Upptime** is the open-source uptime monitor and status page, powered entirely by GitHub."
-  introMessage: This is a sample status page which uses **real-time** data from our [GitHub repository](https://github.com/upptime/upptime). No server required — just GitHub Actions, Issues, and Pages. [**Get your own for free**](https://github.com/upptime/upptime)
+  cname: status.it4pyme.es
+  baseUrl: /
+  logoUrl: https://it4pyme.es/logos/it4pyme-logotipo-claro.svg
+  name: Estado de Sistemas
+  introTitle: "Panel de Estado Operativo"
+  introMessage: "Monitorización en tiempo real de nuestros servicios, herramientas de gestión e infraestructura crítica global."
+  
   navbar:
-    - title: Status
-      href: /
-    - title: GitHub
-      href: https://github.com/$OWNER/$REPO
+    - title: Volver a IT4PYME
+      href: https://it4pyme.es
+    - title: Abrir Ticket
+      href: https://it4pyme.es/contacto
 
-# Upptime also supports notifications, assigning issues, and more
-# See https://upptime.js.org/docs/configuration
+  # CONFIGURACIÓN DE ESTÉTICA "ELEGANT SLATE"
+  theme: dark
+  css: |
+    :root {
+      --bg-color: #0f172a; /* Slate-900 */
+      --card-bg-color: #1e293b; /* Slate-800 */
+      --text-color: #f8fafc; /* Slate-50 */
+      --link-color: #f97316; /* Orange-500 */
+      --success-color: #22c55e; /* Green-500 */
+      --error-color: #ef4444; /* Red-500 */
+      --warning-color: #eab308; /* Yellow-500 */
+      --u-primary: #f97316;
+    }
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    /* Hero Gradient */
+    .hero { background: linear-gradient(to bottom right, #0f172a, #1e293b); border-bottom: 1px solid #334155; }
+    /* Cards Styles */
+    .box { border: 1px solid #334155; border-radius: 0.75rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); }
+    /* Logo adjustment */
+    #logo { max-height: 3.5rem; }
+    /* Footer cleanup */
+    footer { font-size: 0.875rem; opacity: 0.6; }
+
+# TRADUCCIONES AL ESPAÑOL
+i18n:
+  activeIncidents: "Incidencias Activas"
+  allSystemsOperational: "✅ Todos los sistemas operativos"
+  incidentReport: "Informe de incidente de "
+  serviceUnderMaintenance: "🛠 Mantenimiento Programado"
+  majorOutage: "🔴 Caída Mayor"
+  partialOutage: "🟠 Caída Parcial"
+  degradedPerformance: "🟡 Rendimiento Degradado"
+  uptime: "Disponibilidad"
+  pastIncidents: "Incidencias Pasadas"
+  pastIncidentsResolved: "Incidencias resueltas en los últimos días"
+  liveStatus: "Estado en vivo"
+  overallUptime: "Disponibilidad general"
+  overallUptimeTitle: "Disponibilidad general de los últimos 90 días"
+  averageResponseTime: "Tiempo de respuesta medio"
