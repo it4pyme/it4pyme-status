@@ -40,6 +40,7 @@ sites:
   - name: Google DNS
     url: 8.8.8.8
     check: "tcp-ping"
+    port: 53
 
 status-website:
   cname: status.it4pyme.es
