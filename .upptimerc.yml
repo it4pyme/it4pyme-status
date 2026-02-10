@@ -3,7 +3,7 @@ owner: it4pyme
 repo: it4pyme-status
 
 sites:
-  # --- GRUPO 1: SERVICIOS CRÍTICOS (PROPIOS) ---
+  # --- GRUPO 1: PROPIOS ---
   - name: Web IT4PYME
     url: https://it4pyme.es
     method: GET
@@ -13,7 +13,7 @@ sites:
     url: https://pdf.it4pyme.es
     method: GET
 
-  # --- GRUPO 2: HERRAMIENTAS MSP (INTERNAS) ---
+  # --- GRUPO 2: MSP INTERNO ---
   - name: RMM Service (Panel Europa)
     url: https://it4pyme.rmmservice.eu
     method: GET
@@ -22,76 +22,66 @@ sites:
     url: https://gravityzone.bitdefender.com
     method: GET
 
-  # --- GRUPO 3: SERVICIOS DE CLIENTES (Globales) ---
-- name: Microsoft 365 Login
+  # --- GRUPO 3: CLIENTES Y TERCEROS ---
+  - name: Microsoft 365 Login
     url: https://login.microsoftonline.com
     method: GET
+  
+  # CAMBIO CLAVE: Usamos la web informativa de Gmail, que siempre da 200 OK
+  # La url directa a mail.google.com da redirecciones que a veces fallan
+  - name: Google Workspace (Gmail)
+    url: https://www.google.com/gmail/about/
+    method: GET
 
-- name: Gmail Service (IMAP)
-    url: imap.gmail.com
-    check: "tcp-ping"
-    port: 993
-
-  # --- GRUPO 4: INFRAESTRUCTURA MUNDIAL (DNS) ---
-  - name: Cloudflare DNS
-    url: 1.1.1.1
-    check: "tcp-ping"
-    
-  - name: Google DNS
+  # --- GRUPO 4: INFRAESTRUCTURA (DNS) ---
+  # CAMBIO CLAVE: Añadimos check: "tcp-ping" para que no intente cargar web
+  - name: Google DNS (8.8.8.8)
     url: 8.8.8.8
     check: "tcp-ping"
-    port: 53
+
+  - name: Cloudflare DNS (1.1.1.1)
+    url: 1.1.1.1
+    check: "tcp-ping"
 
 status-website:
   cname: status.it4pyme.es
   baseUrl: /
   logoUrl: https://it4pyme.es/logos/it4pyme-logotipo-claro.svg
-  name: Estado de Sistemas
-  introTitle: "Panel de Estado Operativo"
-  introMessage: "Monitorización en tiempo real de nuestros servicios, herramientas de gestión e infraestructura crítica global."
+  name: IT4PYME Status
+  introTitle: "Estado de Sistemas"
+  introMessage: "Panel de monitorización en tiempo real."
   
   navbar:
-    - title: Volver a IT4PYME
+    - title: Volver a Web
       href: https://it4pyme.es
-    - title: Abrir Ticket
+    - title: Soporte
       href: https://it4pyme.es/contacto
 
-  # CONFIGURACIÓN DEL ESTILO
+  # CONFIGURACIÓN DE ESTÉTICA
   theme: dark
   css: |
     :root {
-      --bg-color: #0f172a; /* Slate-900 */
-      --card-bg-color: #1e293b; /* Slate-800 */
-      --text-color: #f8fafc; /* Slate-50 */
-      --link-color: #f97316; /* Orange-500 */
-      --success-color: #22c55e; /* Green-500 */
-      --error-color: #ef4444; /* Red-500 */
-      --warning-color: #eab308; /* Yellow-500 */
+      --bg-color: #0f172a;
+      --card-bg-color: #1e293b;
+      --text-color: #f8fafc;
+      --link-color: #f97316;
+      --success-color: #22c55e;
+      --error-color: #ef4444;
+      --warning-color: #eab308;
       --u-primary: #f97316;
     }
-    body { font-family: 'Inter', system-ui, sans-serif; }
-    /* Hero Gradient */
+    body { font-family: 'Inter', sans-serif; }
     .hero { background: linear-gradient(to bottom right, #0f172a, #1e293b); border-bottom: 1px solid #334155; }
-    /* Cards Styles */
-    .box { border: 1px solid #334155; border-radius: 0.75rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); }
-    /* Logo adjustment */
+    .box { border: 1px solid #334155; border-radius: 0.75rem; }
     #logo { max-height: 3.5rem; }
-    /* Footer cleanup */
     footer { font-size: 0.875rem; opacity: 0.6; }
 
-# TRADUCCIONES AL ESPAÑOL
 i18n:
   activeIncidents: "Incidencias Activas"
-  allSystemsOperational: "✅ Todos los sistemas operativos"
-  incidentReport: "Informe de incidente de "
-  serviceUnderMaintenance: "🛠 Mantenimiento Programado"
-  majorOutage: "🔴 Caída Mayor"
+  allSystemsOperational: "✅ Todo operativo"
+  incidentReport: "Informe de incidente"
+  serviceUnderMaintenance: "🛠 Mantenimiento"
+  majorOutage: "🔴 Caída Total"
   partialOutage: "🟠 Caída Parcial"
   degradedPerformance: "🟡 Rendimiento Degradado"
   uptime: "Disponibilidad"
-  pastIncidents: "Incidencias Pasadas"
-  pastIncidentsResolved: "Incidencias resueltas en los últimos días"
-  liveStatus: "Estado en vivo"
-  overallUptime: "Disponibilidad general"
-  overallUptimeTitle: "Disponibilidad general de los últimos 90 días"
-  averageResponseTime: "Tiempo de respuesta medio"
