@@ -14,7 +14,7 @@ sites:
     method: GET
 
   # --- GRUPO 2: HERRAMIENTAS MSP (INTERNAS) ---
-  - name: NinjaOne RMM (Panel Europa)
+  - name: RMM Service (Panel Europa)
     url: https://it4pyme.rmmservice.eu
     method: GET
 
@@ -23,17 +23,17 @@ sites:
     method: GET
 
   # --- GRUPO 3: SERVICIOS DE CLIENTES (Globales) ---
-  - name: Microsoft 365 (Login)
+- name: Microsoft 365 Login
     url: https://login.microsoftonline.com
     method: GET
-    icon: https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg
 
-  - name: Google Workspace
-    url: https://www.google.com/gmail/about/
-    method: GET
+- name: Gmail Service (IMAP)
+    url: imap.gmail.com
+    check: "tcp-ping"
+    port: 993
 
   # --- GRUPO 4: INFRAESTRUCTURA MUNDIAL (DNS) ---
-  - name: Cloudflare DNS (1.1.1.1)
+  - name: Cloudflare DNS
     url: 1.1.1.1
     check: "tcp-ping"
     
