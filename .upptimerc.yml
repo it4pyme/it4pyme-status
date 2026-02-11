@@ -34,10 +34,9 @@ sites:
     method: GET
 
   # --- GRUPO 4: INFRAESTRUCTURA (DNS) ---
-  # CAMBIO CLAVE: Añadimos check: "tcp-ping" para que no intente cargar web
   - name: Google DNS
     check: "tcp-ping"
-    url: dns.google
+    url: 8.8.8.8
     port: 53
 
   - name: Cloudflare DNS
