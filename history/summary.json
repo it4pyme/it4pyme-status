@@ -25,7 +25,7 @@
     "url": "https://pdf.it4pyme.es",
     "icon": "https://icons.duckduckgo.com/ip3/pdf.it4pyme.es.ico",
     "slug": "herramientas-pdf",
-    "status": "up",
+    "status": "down",
     "uptime": "100.00%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
@@ -36,7 +36,9 @@
     "timeWeek": 564,
     "timeMonth": 814,
     "timeYear": 1068,
-    "dailyMinutesDown": {}
+    "dailyMinutesDown": {
+      "2026-05-10": 0
+    }
   },
   {
     "name": "RMM Service (Panel Europa)",
@@ -80,11 +82,11 @@
     "icon": "https://icons.duckduckgo.com/ip3/login.microsoftonline.com.ico",
     "slug": "microsoft-365-login",
     "status": "up",
-    "uptime": "99.97%",
+    "uptime": "99.98%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
-    "uptimeYear": "99.97%",
+    "uptimeYear": "99.98%",
     "time": 477,
     "timeDay": 632,
     "timeWeek": 528,
